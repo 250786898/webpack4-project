@@ -1,10 +1,10 @@
 const path = require('path')
 module.exports = {
   mode: 'development',
-  entry: './src/index.js' , //入口文件 默认：src/index.js
+  entry: './src/index.js', //入口文件 默认：src/index.js
   output: { //出口文件 默认: dist/main.js
     filename: 'bundle.js', //输出的文件名 
-    path: path.resolve(__dirname,'dist') //输出的路径，只能是绝对路径
+    path: path.resolve(__dirname, 'dist') //输出的路径，只能是绝对路径
   },
   module: {
     rules: [
@@ -28,7 +28,14 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader','css-loader','sass-loader','postcss-loader']
+        use: ['style-loader', {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2, // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
+            modules: true //按模块化引入
+          }
+        }, 'sass-loader', 'postcss-loader'
+        ]
       }
     ]
   }

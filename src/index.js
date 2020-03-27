@@ -6,13 +6,14 @@
 // new Footer()
 
 
-
 import logo from './logo.jpg'
-import './index.scss'
+import style from './index.scss'
+import createLogo from './logo.js'
 
+createLogo()
 var img = new Image()
 img.src = logo
-img.classList.add('logo')
+img.classList.add(style.logo)
 var root = document.getElementById('root')
 root.append(img)
 

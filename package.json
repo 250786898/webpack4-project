@@ -16,6 +16,14 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
+  "browserslist": [
+    "defaults",
+    "ie >= 10",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "bundle": "webpack"
