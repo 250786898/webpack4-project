@@ -1,9 +1,14 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'development',
-  entry: './src/index.js', //入口文件 默认：src/index.js
+  entry: {
+    main: './src/index.js', //入口文件 默认：src/index.js
+    sub: './src/sub.js'
+  },
   output: { //出口文件 默认: dist/main.js
-    filename: 'bundle.js', //输出的文件名 
+    filename: '[name].js', //输出的文件名 
     path: path.resolve(__dirname, 'dist') //输出的路径，只能是绝对路径
   },
   module: {
@@ -27,16 +32,35 @@ module.exports = {
         ]
       },
       {
-        test: /\.scss$/,
+        test: /\.sass$/,
         use: ['style-loader', {
           loader: 'css-loader',
           options: {
-            importLoaders: 2, // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
-            modules: true //按模块化引入
+            importLoaders: 2 // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
+            // modules: true //按模块化引入
           }
         }, 'sass-loader', 'postcss-loader'
         ]
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    }),
+    
+  ]
 }
