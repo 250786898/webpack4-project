@@ -1,11 +1,24 @@
 {
   "name": "webpack4",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "scripts": {
+    "dev": "webpack-dev-server ./build/webpack.dev.js",
+    "build": "webpack ./bulid/webpack.prod.js"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "@babel/runtime": "^7.9.2",
+    "@babel/runtime-corejs2": "^7.9.2"
+  },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
     "autoprefixer": "^9.7.5",
+    "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "file-loader": "^6.0.0",
@@ -17,7 +30,8 @@
     "url-loader": "^4.0.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   },
   "browserslist": [
     "defaults",
@@ -27,10 +41,6 @@
     "iOS 7",
     "last 3 iOS versions"
   ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server"
-  },
   "author": "",
   "license": "ISC"
 }
