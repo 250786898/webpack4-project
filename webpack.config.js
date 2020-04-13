@@ -2,23 +2,20 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// path.resolve(__dirname,'src/index.js'),
 module.exports = {
-  mode: 'production',
-  // devtool: 'eval-cheap-module-source-map',
-  devtool: 'cheap-module-source-map',
+  mode: 'development',
+  devtool: 'eval-cheap-module-source-map',
+  // devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: './dist',
     port: 9000, //服务端口号
     open: true, //首次打包编译自动打开浏览器
     hot: true,
     hotOnly: true,
-    proxy: {//反向代理，一般用于解决跨域问题
-      '/api': 'http://localhost:3000'
-    }
   },
-  entry: {
-    main: './src/index.js', //入口文件 默认：src/index.js
-    // sub: './src/sub.js'
+  entry: { 
+    main: './src/index.js' //入口文件 默认：src/index.js
   },
   output: { //出口文件 默认: dist/main.js
     filename: '[name].js', //输出的文件名 

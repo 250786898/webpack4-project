@@ -1,3 +1,6 @@
-import { add } from './math' 
+document.addEventListener('click', () => {
+  import(/*webpackPrefetch: true */ './loadsh').then(({default: _}) => {
+    _()
+  })
+})
 
-add(3,2)
