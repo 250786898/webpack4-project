@@ -3,8 +3,8 @@
   "warnings": [],
   "version": "4.42.1",
   "hash": "b72612c264604d51c03c",
-  "time": 525,
-  "builtAt": 1586425846339,
+  "time": 1971,
+  "builtAt": 1586856137380,
   "publicPath": "",
   "outputPath": "E:\\project\\webpack4\\dist",
   "assetsByChunkName": {
@@ -31,7 +31,7 @@
     },
     {
       "name": "main.js",
-      "size": 35671,
+      "size": 35663,
       "chunks": [
         "main"
       ],
@@ -141,14 +141,14 @@
               "identifier": "E:\\project\\webpack4\\node_modules\\babel-loader\\lib\\index.js!E:\\project\\webpack4\\src\\index.js",
               "name": "./src/index.js",
               "profile": {
-                "factory": 61,
-                "building": 403
+                "factory": 63,
+                "building": 1782
               }
             }
           ],
           "profile": {
-            "factory": 2,
-            "building": 7
+            "factory": 19,
+            "building": 9
           },
           "failed": false,
           "errors": 0,
@@ -230,8 +230,8 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 61,
-            "building": 403
+            "factory": 63,
+            "building": 1782
           },
           "failed": false,
           "errors": 0,
@@ -288,8 +288,8 @@
       "issuerName": null,
       "issuerPath": null,
       "profile": {
-        "factory": 61,
-        "building": 403
+        "factory": 63,
+        "building": 1782
       },
       "failed": false,
       "errors": 0,
@@ -335,14 +335,14 @@
           "identifier": "E:\\project\\webpack4\\node_modules\\babel-loader\\lib\\index.js!E:\\project\\webpack4\\src\\index.js",
           "name": "./src/index.js",
           "profile": {
-            "factory": 61,
-            "building": 403
+            "factory": 63,
+            "building": 1782
           }
         }
       ],
       "profile": {
-        "factory": 2,
-        "building": 7
+        "factory": 19,
+        "building": 9
       },
       "failed": false,
       "errors": 0,
@@ -462,8 +462,8 @@
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 32,
-                "building": 14
+                "factory": 25,
+                "building": 21
               },
               "failed": false,
               "errors": 0,
@@ -520,8 +520,8 @@
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 32,
-            "building": 14
+            "factory": 25,
+            "building": 21
           },
           "failed": false,
           "errors": 0,

@@ -12,7 +12,7 @@ const devCongif = {
     hotOnly: true,
   },
   optimization: {
-    usedExports: true
+    
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()

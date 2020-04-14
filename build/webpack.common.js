@@ -7,7 +7,8 @@ module.exports = {
   },
   output: { //出口文件 默认: dist/main.js
     filename: '[name].js', //输出的文件名 
-    path: path.resolve(__dirname, '../dist') //输出的路径，只能是绝对路径
+    path: path.resolve(__dirname, '../dist'), //输出的路径，只能是绝对路径
+    chunkFilename: '[name].chunk.js' //chunk文件生成的名字
   },
   module: {
     rules: [
@@ -35,21 +36,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.sass$/,
-        use: ['style-loader', {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 2 // 0 => no loaders (default); 1 => postcss-loader; 2 => postcss-loader, sass-loader
-            // modules: true //按模块化引入
-          }
-        }, 'sass-loader', 'postcss-loader'
-        ]
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      },
-      {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
         use: [
           {
@@ -67,6 +53,7 @@ module.exports = {
     })
   ],
   optimization: {
+    usedExports: true,
     splitChunks: {
       chunks: 'all', //代码切割的类型： async: 只切割异步代码  initial:只切割同步代码 all：两种都切割
       minSize: 30000, //切割的文件最小要求，单位kb

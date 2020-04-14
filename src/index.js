@@ -1,6 +1,1 @@
-document.addEventListener('click', () => {
-  import(/*webpackPrefetch: true */ './loadsh').then(({default: _}) => {
-    _()
-  })
-})
-
+import './index.css'
