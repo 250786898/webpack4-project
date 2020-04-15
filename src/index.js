@@ -1,1 +1,2 @@
-import './index.css'
+import _ from 'lodash'
+_.join(['lee','dill'],'+++')

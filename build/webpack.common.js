@@ -6,9 +6,7 @@ module.exports = {
     main: './src/index.js', //入口文件 默认：src/index.js
   },
   output: { //出口文件 默认: dist/main.js
-    filename: '[name].js', //输出的文件名 
     path: path.resolve(__dirname, '../dist'), //输出的路径，只能是绝对路径
-    chunkFilename: '[name].chunk.js' //chunk文件生成的名字
   },
   module: {
     rules: [

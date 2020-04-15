@@ -5,6 +5,10 @@ const optimizeCss = require('optimize-css-assets-webpack-plugin');
 
 const prodCongif = {
   mode: 'production',
+  output: {
+    filename: '[name].js', //输出的文件名 
+    chunkFilename: '[name].chunk.js' //chunk文件生成的名字
+  },
   devtool: 'cheap-module-source-map',
   module: {
     rules: [
